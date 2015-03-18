@@ -1,0 +1,1047 @@
+fileFormatVersion: 2
+guid: 15a106bcb03eb7441b42f0f19c5c5c29
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: bn_base
+    100002: bn_body01
+    100004: bn_body02
+    100006: bn_body03
+    100008: bn_body04
+    100010: bn_body05
+    100012: bn_body06
+    100014: bn_body07
+    100016: bn_body08
+    100018: bn_face
+    100020: bn_l_ear
+    100022: bn_l_tail
+    100024: bn_r_ear
+    100026: bn_r_tail
+    100028: bn_topping
+    100030: bones
+    100032: br_rootBody
+    100034: Global_Scale
+    100036: Global_Transform
+    100038: mesh_bodyPudding
+    100040: mesh_face
+    100042: mesh_prop
+    100044: mesh_topping
+    100046: model
+    100048: //RootNode
+    400000: bn_base
+    400002: bn_body01
+    400004: bn_body02
+    400006: bn_body03
+    400008: bn_body04
+    400010: bn_body05
+    400012: bn_body06
+    400014: bn_body07
+    400016: bn_body08
+    400018: bn_face
+    400020: bn_l_ear
+    400022: bn_l_tail
+    400024: bn_r_ear
+    400026: bn_r_tail
+    400028: bn_topping
+    400030: bones
+    400032: br_rootBody
+    400034: Global_Scale
+    400036: Global_Transform
+    400038: mesh_bodyPudding
+    400040: mesh_face
+    400042: mesh_prop
+    400044: mesh_topping
+    400046: model
+    400048: //RootNode
+    4300000: mesh_face
+    4300002: mesh_prop
+    4300004: mesh_topping
+    4300006: mesh_bodyPudding
+    7400000: anim_idle_02
+    7400002: anim_move_01
+    7400004: anim_active_01
+    7400006: anim_grapMove_01
+    7400008: anim_grapStop_01
+    7400010: anim_touchPlay_01
+    7400012: anim_touchPlay_02
+    7400014: anim_idleRandom_01
+    7400016: anim_idle_01
+    7400018: anim_eat_01
+    7400020: anim_eat_02
+    7400022: anim_eat_03
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: mesh_bodyPudding
+    13700002: mesh_face
+    13700004: mesh_prop
+    13700006: mesh_topping
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 0
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: anim_idle_01
+      takeName: Take 001
+      firstFrame: 4
+      lastFrame: 60
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Global_Transform
+        weight: 1
+      - path: Global_Transform/Global_Scale
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06/bn_body07
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06/bn_body07/bn_body08
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_l_ear
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_r_ear
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_topping
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_face
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_l_tail
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_r_tail
+        weight: 1
+      - path: Global_Transform/Global_Scale/model
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_bodyPudding
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_face
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_prop
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_topping
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: anim_move_01
+      takeName: Take 001
+      firstFrame: 62
+      lastFrame: 141
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Global_Transform
+        weight: 1
+      - path: Global_Transform/Global_Scale
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06/bn_body07
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06/bn_body07/bn_body08
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_l_ear
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_r_ear
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_topping
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_face
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_l_tail
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_r_tail
+        weight: 1
+      - path: Global_Transform/Global_Scale/model
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_bodyPudding
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_face
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_prop
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_topping
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: anim_active_01
+      takeName: Take 001
+      firstFrame: 144
+      lastFrame: 194
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Global_Transform
+        weight: 1
+      - path: Global_Transform/Global_Scale
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06/bn_body07
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06/bn_body07/bn_body08
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_l_ear
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_r_ear
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_topping
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_face
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_l_tail
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_r_tail
+        weight: 1
+      - path: Global_Transform/Global_Scale/model
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_bodyPudding
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_face
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_prop
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_topping
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: anim_grapMove_01
+      takeName: Take 001
+      firstFrame: 197
+      lastFrame: 197.100006
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Global_Transform
+        weight: 1
+      - path: Global_Transform/Global_Scale
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06/bn_body07
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06/bn_body07/bn_body08
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_l_ear
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_r_ear
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_topping
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_face
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_l_tail
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_r_tail
+        weight: 1
+      - path: Global_Transform/Global_Scale/model
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_bodyPudding
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_face
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_prop
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_topping
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: anim_grapStop_01
+      takeName: Take 001
+      firstFrame: 198
+      lastFrame: 258
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Global_Transform
+        weight: 1
+      - path: Global_Transform/Global_Scale
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06/bn_body07
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06/bn_body07/bn_body08
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_l_ear
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_r_ear
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_topping
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_face
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_l_tail
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_r_tail
+        weight: 1
+      - path: Global_Transform/Global_Scale/model
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_bodyPudding
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_face
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_prop
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_topping
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: anim_touchPlay_01
+      takeName: Take 001
+      firstFrame: 260
+      lastFrame: 319
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Global_Transform
+        weight: 1
+      - path: Global_Transform/Global_Scale
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06/bn_body07
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06/bn_body07/bn_body08
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_l_ear
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_r_ear
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_topping
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_face
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_l_tail
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_r_tail
+        weight: 1
+      - path: Global_Transform/Global_Scale/model
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_bodyPudding
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_face
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_prop
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_topping
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: anim_touchPlay_02
+      takeName: Take 001
+      firstFrame: 322
+      lastFrame: 381
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Global_Transform
+        weight: 1
+      - path: Global_Transform/Global_Scale
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06/bn_body07
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06/bn_body07/bn_body08
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_l_ear
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_r_ear
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_topping
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_face
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_l_tail
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_r_tail
+        weight: 1
+      - path: Global_Transform/Global_Scale/model
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_bodyPudding
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_face
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_prop
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_topping
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: anim_idleRandom_01
+      takeName: Take 001
+      firstFrame: 384
+      lastFrame: 474
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Global_Transform
+        weight: 1
+      - path: Global_Transform/Global_Scale
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06/bn_body07
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06/bn_body07/bn_body08
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_l_ear
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_r_ear
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_topping
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_face
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_l_tail
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_r_tail
+        weight: 1
+      - path: Global_Transform/Global_Scale/model
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_bodyPudding
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_face
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_prop
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_topping
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: anim_idle_02
+      takeName: Take 001
+      firstFrame: 476
+      lastFrame: 535
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Global_Transform
+        weight: 1
+      - path: Global_Transform/Global_Scale
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06/bn_body07
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06/bn_body07/bn_body08
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_l_ear
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_r_ear
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_topping
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_face
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_l_tail
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_r_tail
+        weight: 1
+      - path: Global_Transform/Global_Scale/model
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_bodyPudding
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_face
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_prop
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_topping
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: anim_eat_01
+      takeName: Take 001
+      firstFrame: 538
+      lastFrame: 578
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Global_Transform
+        weight: 1
+      - path: Global_Transform/Global_Scale
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06/bn_body07
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06/bn_body07/bn_body08
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_l_ear
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_r_ear
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_topping
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_face
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_l_tail
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_r_tail
+        weight: 1
+      - path: Global_Transform/Global_Scale/model
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_bodyPudding
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_face
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_prop
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_topping
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: anim_eat_02
+      takeName: Take 001
+      firstFrame: 581
+      lastFrame: 640
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Global_Transform
+        weight: 1
+      - path: Global_Transform/Global_Scale
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06/bn_body07
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06/bn_body07/bn_body08
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_l_ear
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_r_ear
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_topping
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_face
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_l_tail
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_r_tail
+        weight: 1
+      - path: Global_Transform/Global_Scale/model
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_bodyPudding
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_face
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_prop
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_topping
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: anim_eat_03
+      takeName: Take 001
+      firstFrame: 642
+      lastFrame: 742
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Global_Transform
+        weight: 1
+      - path: Global_Transform/Global_Scale
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06/bn_body07
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_body06/bn_body07/bn_body08
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_l_ear
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_r_ear
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_body02/bn_body03/bn_body04/bn_body05/bn_topping
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_face
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_l_tail
+        weight: 1
+      - path: Global_Transform/Global_Scale/bones/br_rootBody/bn_base/bn_body01/bn_r_tail
+        weight: 1
+      - path: Global_Transform/Global_Scale/model
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_bodyPudding
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_face
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_prop
+        weight: 1
+      - path: Global_Transform/Global_Scale/model/mesh_topping
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
