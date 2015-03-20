@@ -19,14 +19,17 @@ public class GameControl : MonoBehaviour {
 
 	public GameObject battleOBJ;
 
-	public static bool isBattle = false;
-
 	public int[] playerMonster;
 
 	public MonsterData[] monsters;
 	public SkillData[] skills;
 	public Quest[] quest;
-	public int currentQuestSelect = 0;
+
+	int currentQuestSelect = 0;
+	public Quest CurrentQuest
+	{
+		get { return quest[currentQuestSelect]; }
+	}
 
 	public List<int> teamSelect = new List<int> ();
 
@@ -74,7 +77,7 @@ public class GameControl : MonoBehaviour {
 			return;
 		}
 		*/
-		if(isBattle)
+		if(battleOBJ.activeSelf)
 			return;
 
 		var audioSource	= gameObject.GetComponent<AudioSource>();
@@ -173,8 +176,6 @@ public class GameControl : MonoBehaviour {
 		}
 		else if (currentStep == UI_STEP.TeamSetup)//Team Setup
 		{
-
-				
 			GUI.BeginGroup (battlePosition, "");
 			{
 				for (int i = 0; i < 7;i++)
@@ -184,7 +185,7 @@ public class GameControl : MonoBehaviour {
 						GUI.Box(new Rect(i * battlePosSize, 0, battlePosSize, battlePosSize), "");
 						if (i > 3)
 						{
-							var monIndex	= quest[currentQuestSelect].enemy[i - 4];
+							var monIndex	= CurrentQuest.enemy[i - 4];
 							monsters[monIndex].Draw(new Rect((i * battlePosSize) + battlePosSize,0,-battlePosSize,battlePosSize));
 						}
 					}
@@ -268,7 +269,7 @@ public class GameControl : MonoBehaviour {
 			{
 				GUI.Box (new Rect (0, 0, questInfoRect.width, questInfoRect.height), "Quest Detail");
 					
-				GUI.Box(new Rect(10, 35, questInfoRect.width - 20, 50), quest[currentQuestSelect].name);
+				GUI.Box(new Rect(10, 35, questInfoRect.width - 20, 50), CurrentQuest.name);
 				GUI.Box(new Rect(10, 90, questInfoRect.width - 20, 100), "Quest Award");
 					
 				if (teamSelect.Count == 3)
@@ -276,7 +277,6 @@ public class GameControl : MonoBehaviour {
 					if (GUI.Button(new Rect(10 , 200, questInfoRect.width - 20, 40), "GO"))
 					{
 						currentStep = UI_STEP.Battle;
-						isBattle = true;
 						battleOBJ.SetActive(true);
 
 						audioSource.PlayOneShot(buttonSFX[0]);
