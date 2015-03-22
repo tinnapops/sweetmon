@@ -16,7 +16,8 @@ public struct MonsterData
 	public float def;
 	public float wis;
 	public float hp;
-	public int skillID;
+
+	public SkillData skill;
 
 	public void Draw(Rect mb)
 	{

@@ -3,7 +3,10 @@
 using System.Linq;
 using System.Collections.Generic;
 
-public class Monster : MonoBehaviour {
+public enum Team { Left = -1,None = 0,Right = 1 }
+public class Monster : MonoBehaviour
+{
+	public Team Team	= Team.None;
 
 	public float atk = 1;
 	public float def = 1;
@@ -13,7 +16,7 @@ public class Monster : MonoBehaviour {
 	public int limitBreak = 5;
 	public int currentLimit = 5;
 	public int avatarID = 0;
-	public Skill skill;
+	public SkillData skill;
 	
 	public Texture[] textureMonster;
 	public GameControl gCTRL;

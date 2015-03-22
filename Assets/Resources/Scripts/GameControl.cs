@@ -3,26 +3,38 @@
 using System.Linq;
 using System.Collections.Generic;
 
-public class GameControl : MonoBehaviour {
-	float start	= 0;
-	void Start () 
+public class GameControl : MonoBehaviour
+{
+	BattleController battleOBJ;
+	void Start() 
 	{
 		var audioSource	= gameObject.GetComponent<AudioSource>();
 		audioSource.Stop();
 		audioSource.clip = bgm[0];
 		audioSource.Play();
+
+		battleOBJ	= gameObject.transform.GetChild(0).GetComponent<BattleController>();
+
+		int i	= 0;
+		while(i < monsters.Length)
+		{
+			monsters[i].skill.displayName	= "Sugar Punch";
+			monsters[i].skill.name	= "S_ATK";
+			monsters[i].skill.desc	= "...";
+			monsters[i].skill.multiply	= 3;
+			monsters[i].skill.target	= 3;
+			i++;
+		}
 	}
 
 	public AudioClip[] bgm;
 
 	public AudioClip[] buttonSFX;
 
-	public GameObject battleOBJ;
-
+	
 	public int[] playerMonster;
 
 	public MonsterData[] monsters;
-	public SkillData[] skills;
 	public Quest[] quest;
 
 	int currentQuestSelect = 0;
@@ -77,8 +89,12 @@ public class GameControl : MonoBehaviour {
 			return;
 		}
 		*/
-		if(battleOBJ.activeSelf)
+
+		if(battleOBJ.gameObject.activeSelf)
 			return;
+
+		if(currentStep == UI_STEP.Battle)
+			currentStep	= UI_STEP.Lobby;
 
 		var audioSource	= gameObject.GetComponent<AudioSource>();
 
@@ -234,7 +250,7 @@ public class GameControl : MonoBehaviour {
 				GUI.Box(new Rect(0, 25, monsterInfoRect.width, 25), monsters[monIndex].name);
 					
 				GUI.Box(new Rect(25, 55, 75, 75), "Skill Pic");
-				GUI.Label(new Rect(125,50,100,50),skills[monIndex].name);
+				GUI.Label(new Rect(125,50,100,50),monsters[monIndex].skill.name);
 
 				int hpStar,atkStar,defStar,intStar;
 				monsters[monIndex].GetStar(out hpStar,out atkStar,out defStar,out intStar);
@@ -277,7 +293,7 @@ public class GameControl : MonoBehaviour {
 					if (GUI.Button(new Rect(10 , 200, questInfoRect.width - 20, 40), "GO"))
 					{
 						currentStep = UI_STEP.Battle;
-						battleOBJ.SetActive(true);
+						battleOBJ.gameObject.SetActive(true);
 
 						audioSource.PlayOneShot(buttonSFX[0]);
 						audioSource.Stop();
