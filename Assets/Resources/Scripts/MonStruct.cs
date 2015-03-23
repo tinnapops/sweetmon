@@ -17,6 +17,7 @@ public struct MonsterData
 	public float wis;
 	public float hp;
 	public int skillID;
+	public bool isSeen;
 
 	public void Draw(Rect mb)
 	{

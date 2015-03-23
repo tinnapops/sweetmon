@@ -33,14 +33,16 @@ public class GameControl : MonoBehaviour {
 	public Rect statusPosition;
 
 	public Rect battlePosition;
+	public Rect FeedingPosition;
 
 	public Rect monsterStockRect;
+	public Rect monsterListStockRect;
 
 	public Rect monsterInfoRect;
 
 	public Rect questInfoRect;
 
-	public enum UI_STEP{Title, Lobby, StageSelect, TeamSetup, Battle, Shop, DessertDex, Topping, Evolution};
+	public enum UI_STEP{Title, Lobby, StageSelect, TeamSetup, Battle, Shop, DessertDex, Topping, Evolution, MonsterList};
 	public enum POPUP_STEP{None, MonsterInfo, FriendList};
 
 	public UI_STEP currentStep = UI_STEP.Title;
@@ -50,6 +52,8 @@ public class GameControl : MonoBehaviour {
 	public Texture2D startScreen;
 
 	public Vector2 scrollPosition;
+
+	int currentDexID = 0;
 
 	void OnGUI()
 	{
@@ -135,29 +139,165 @@ public class GameControl : MonoBehaviour {
 			}
 			if (GUI.Button(new Rect(200, 768 - 100, 100, 100), "Monster"))
 			{
-				
+				currentStep = UI_STEP.MonsterList;
 			}
 			if (GUI.Button(new Rect(0, 100, 100, 100), "Dessrt Dex"))
 			{
 				currentStep = UI_STEP.DessertDex;
 			}
 		}
-		else if (currentStep == UI_STEP.DessertDex)//Desert Dex Select
+		else if (currentStep == UI_STEP.DessertDex && currentPopupStep == POPUP_STEP.None)//Desert Dex Select
 		{
-
 			GUI.BeginGroup(new Rect(25, 75, 1024 - 50, 768 - 100), "");
 			{
-				GUI.Box(new Rect(0, 0 , 1024 - 50, 768 - 100), "Sweet Recipe");
-
-				GUI.Button(new Rect(5 , 25, 200, 100), "ID");
-
-				scrollPosition = GUI.BeginScrollView(new Rect(5, 125, 950, 500), scrollPosition, new Rect(0, 0, 950 - 25, 1000));
+				if (GUI.Button(new Rect(1024 - 50 - 25, 0, 25, 25), "X"))
 				{
-					GUI.Button(new Rect(0 , 0, 950, 150), "0");
+					currentStep = UI_STEP.Lobby;
+					currentPopupStep = POPUP_STEP.None;
+				}
+				GUI.Box(new Rect(0, 0 , 1024 - 50, 768 - 100), "Sweet Recipe");
+				
+				GUI.Button(new Rect(5 , 25, 200, 100), "ID");
+				
+				scrollPosition = GUI.BeginScrollView(new Rect(5, 125, 950, 500), scrollPosition, new Rect(0, 0, 950 - 25, 450 * 3));
+				{
+					for (int i = 0; i < 3;i++)
+					{
+						int id = i * 6;
+						GUI.BeginGroup(new Rect(0 , i * 450, 950, 450), "0");
+						{
+							GUI.Box(new Rect(0, 0, 950, 460), "monster");
+
+							if (!monsters[id].isSeen)
+							{
+								GUI.color = new Color(0, 0, 0, 1);
+							}
+							else
+							{
+								GUI.color = Color.white;
+							}
+							monsters[id].Draw(new Rect(50, 460 / 2 - 128 / 2, 128, 128));
+
+
+
+
+							if (!monsters[id + 1].isSeen)
+							{
+								GUI.color = new Color(0, 0, 0, 1);
+							}
+							else
+							{
+								GUI.color = Color.white;
+							}
+							monsters[id + 1].Draw(new Rect(250, 460 / 2 - 128 / 2 - (128 / 2), 128, 128));
+
+							if (!monsters[id + 2].isSeen)
+							{
+								GUI.color = new Color(0, 0, 0, 1);
+							}
+							else
+							{
+								GUI.color = Color.white;
+							}
+							monsters[id + 2].Draw(new Rect(250, 460 / 2 - 128 / 2 + (128 / 2), 128, 128));
+
+
+							if (!monsters[id + 3].isSeen)
+							{
+								GUI.color = new Color(0, 0, 0, 1);
+							}
+							else
+							{
+								GUI.color = Color.white;
+							}
+							monsters[id + 3].Draw(new Rect(500, 460 / 2 - 128 / 2 - (128), 128, 128));
+
+
+							if (!monsters[id + 4].isSeen)
+							{
+								GUI.color = new Color(0, 0, 0, 1);
+							}
+							else
+							{
+								GUI.color = Color.white;
+							}
+							monsters[id + 4].Draw(new Rect(500, 460 / 2 - 128 / 2, 128, 128));
+
+							if (!monsters[id + 5].isSeen)
+							{
+								GUI.color = new Color(0, 0, 0, 1);
+							}
+							else
+							{
+								GUI.color = Color.white;
+							}
+							monsters[id + 5].Draw(new Rect(500, 460 / 2 - 128 / 2 + (128), 128, 128));
+
+
+							GUI.color = Color.white;
+
+							if (GUI.Button(new Rect(750, 450 / 2 -  (150 / 2) - 100 , 150, 150), "Evolution Reward"))
+							{
+								
+							}
+							if (GUI.Button(new Rect(750, 450 / 2 +  (150 / 2) - 50, 150, 150), "Discovery Reward"))
+							{
+								
+							}
+
+							GUI.color = new Color(0, 0, 0, 0);
+
+							if (currentPopupStep == POPUP_STEP.None)
+							{
+								//0
+								if (GUI.Button(new Rect(50, 460 / 2 - 128 / 2, 128, 128), ""))
+								{
+									currentPopupStep = POPUP_STEP.MonsterInfo;
+									currentDexID = id;
+								}
+								
+								// 1 - 2
+								if (GUI.Button(new Rect(250, 460 / 2 - 128 / 2 - (128 / 2), 128, 128), ""))
+								{
+									currentPopupStep = POPUP_STEP.MonsterInfo;
+									currentDexID = id + 1;
+								}
+								if (GUI.Button(new Rect(250, 460 / 2 - 128 / 2 + (128 / 2), 128, 128), ""))
+								{
+									currentPopupStep = POPUP_STEP.MonsterInfo;
+									currentDexID = id + 2;
+								}
+								
+								//3 - 5
+								if (GUI.Button(new Rect(500, 460 / 2 - 128 / 2 - (128), 128, 128), ""))
+								{
+									currentPopupStep = POPUP_STEP.MonsterInfo;
+									currentDexID = id + 3;
+								}
+								
+								if (GUI.Button(new Rect(500, 460 / 2 - 128 / 2, 128, 128), ""))
+								{
+									currentPopupStep = POPUP_STEP.MonsterInfo;
+									currentDexID = id + 4;
+								}
+								
+								if (GUI.Button(new Rect(500, 460 / 2 - 128 / 2 + (128), 128, 128), ""))
+								{
+									currentPopupStep = POPUP_STEP.MonsterInfo;
+									currentDexID = id + 5;
+								}
+							}
+							GUI.color = Color.white;
+						}
+						GUI.EndGroup();
+					}
+
 				}
 				GUI.EndScrollView();
 			}
 			GUI.EndGroup();
+
+
 		}
 		else if (currentStep == UI_STEP.StageSelect)//Stage Select
 		{
@@ -173,8 +313,6 @@ public class GameControl : MonoBehaviour {
 		}
 		else if (currentStep == UI_STEP.TeamSetup)//Team Setup
 		{
-
-				
 			GUI.BeginGroup (battlePosition, "");
 			{
 				for (int i = 0; i < 7;i++)
@@ -294,12 +432,203 @@ public class GameControl : MonoBehaviour {
 					
 			}
 			GUI.EndGroup ();
-
-			if (isMonsterInfoPopup)
+		}
+		else if (currentStep == UI_STEP.MonsterList)//Feeding Evolutioning
+		{
+			GUI.BeginGroup (FeedingPosition, "");
 			{
+				if (GUI.Button(new Rect(FeedingPosition.width - 25, 0 , 25, 25), "X"))
+				{
+					currentStep = UI_STEP.Lobby;
+				}
+				GUI.Box(new Rect(0,0, FeedingPosition.width, monsterInfoRect.height), "INFO");
+				
+				var monIndex	= playerMonster[currentSelectMonsterInfo];
+				GUI.Box(new Rect(25 , 25, 256, 25), monsters[monIndex].name);
+				GUI.Box(new Rect(5 + 256, 160, 75, 75), "TOPPING");
+
+				
+				GUI.Box(new Rect(350, 130, 75, 75), "Skill Pic");
+				GUI.Box(new Rect(350, 130 + 80, 75, 25),skills[monIndex].name);
+				
+				int hpStar,atkStar,defStar,intStar;
+				monsters[monIndex].GetStar(out hpStar,out atkStar,out defStar,out intStar);
+				
+				GUI.Label(new Rect(25 + 430, 135, 100, 25), "HP");
+				for(int i = 0;i < hpStar;i++)
+					GUI.Box(new Rect(100 + (i * 25) + 430, 135 , 25, 25), "*");
+				
+				GUI.Label(new Rect(25 + 430, 160, 100, 25), "ATK");
+				for(int i = 0;i < atkStar;i++)
+					GUI.Box(new Rect(100 + (i * 25) + 430, 160 , 25, 25), "*");
+				
+				GUI.Label(new Rect(25 + 430, 185, 100, 25), "DEF");
+				for(int i = 0;i < defStar;i++)
+					GUI.Box(new Rect(100 + (i * 25) + 430, 185 , 25, 25), "*");
+				
+				GUI.Label(new Rect(25 + 430, 210, 100, 25), "INT");
+				for(int i = 0;i < intStar;i++)
+					GUI.Box(new Rect(100 + (i * 25) + 430, 210 , 25, 25), "*");
+
+
+				monsters[monIndex].Draw(new Rect(5, 5 , 256, 256));
+
+				GUI.Box(new Rect(350 , 60, 50, 25), "LV");
+				GUI.Box(new Rect(350 + 50, 60, 250, 25), "EXP 0/100");
+				GUI.Box(new Rect(350 , 60 + 30, 50, 25), "FLV");
+				GUI.Box(new Rect(350 + 50, 60 + 30, 250, 25), "FULLNESS 100/100");
+
+				GUI.Box(new Rect(350 + 200 + 105, 180, 300, 50), "Evolution");
+
+				GUI.Box(new Rect(350 + 200 + 105, 180 - 55, 145, 50), "50 %\nDNA LOCK");
+				GUI.Box(new Rect(350 + 200 + 105 + 155, 180 - 55, 145, 50), "50 %\nDNA LOCK");
+
+
+				if (monsters[monIndex].evoTo.Length > 0)
+				{
+					if (!monsters[monsters[monIndex].evoTo[0]].isSeen)
+					{
+						GUI.color = new Color(0,0,0,1);
+					}
+					monsters[monsters[monIndex].evoTo[0]].Draw(new Rect(350 + 200 + 125, 180 - 55 - 105, 100, 100));
+					if (!monsters[monsters[monIndex].evoTo[1]].isSeen)
+					{
+						GUI.color = new Color(0,0,0,1);
+					}
+					monsters[monsters[monIndex].evoTo[1]].Draw(new Rect(350 + 200 + 125 + 155, 180 - 55 - 105, 100, 100));
+					GUI.color = Color.white;
+				}
+
 
 			}
+			GUI.EndGroup ();
+			
+			GUI.BeginGroup (monsterListStockRect, "");
+			{
+				GUI.Box(new Rect(0, 0 , monsterListStockRect.width, monsterListStockRect.height), "");
+				for (int i = 0; i < playerMonster.Length;i ++)
+				{
+					var monsterButton = new Rect(0 + ((i%7) * iconSize.x), 0 + ((i/7) * iconSize.y), iconSize.x ,iconSize.y);
+					
+					var monIndex	= playerMonster[i];
+					if(teamSelect.Contains(monIndex))
+						GUI.Box(monsterButton,"SELECTED");
+					monsters[playerMonster[i]].Draw(monsterButton);
+					
+					GUI.color = new Color(0,0,0,0);
+					
+					if (GUI.Button(monsterButton, ""))
+					{
+						currentSelectMonsterInfo = i;
+					}
+					GUI.color = Color.white;
+				}
+			}
+			GUI.EndGroup ();
 		}
+
+		if (currentPopupStep == POPUP_STEP.MonsterInfo)
+		{
+			GUI.Box(new Rect(0, 0, 1024, 768), "");
+			MonsterInfo(currentDexID, new Rect(1024 / 2 - 800 / 2, 678/ 2 - 600 / 2, 800, 600));
+		}
+	}
+
+	bool feedingMode = false;
+
+	void MonsterInfo(int id, Rect rect)
+	{
+		GUI.BeginGroup (rect, "");
+		{
+			GUI.Box(new Rect(0, 0, rect.width, rect.height), "");
+			// 400 - 400
+
+			GUI.Box(new Rect(10, 35, 380, 50), monsters[id].name);
+
+			if (!monsters[id].isSeen)
+			{
+				GUI.color = new Color(0,0,0,1);
+			}
+			monsters[id].Draw(new Rect(10 + 400 / 2 - 256 / 2, 25 + 10 + 50 + 10 , 256, 256));
+
+			GUI.color = Color.white;
+			GUI.Box(new Rect(10, 25 + 10 + 50 + 10 + 256 + 10, 380, 100), "Detail");
+			GUI.Box(new Rect(10, 25  + 10 + 50 + 10 + 256 + 10 + 100 + 10, 380, 100), "Share Facebook");
+
+
+			
+			var monIndex = id;
+			
+			int hpStar,atkStar,defStar,intStar;
+			monsters[monIndex].GetStar(out hpStar,out atkStar,out defStar,out intStar);
+
+			GUI.Box(new Rect(410, 35, 380, 25), "LV 10/10");
+
+			GUI.Box(new Rect(410, 35 + 10 + 25, 380, 25), "Class");
+
+			GUI.Label(new Rect(410, 35 + 10 + 25 + 10 + 25, 100, 25), "HP");
+			for(int i = 0;i < hpStar;i++)
+				GUI.Box(new Rect(485 + (i * 25), 35 + 10 + 25 + 5 + 25, 25, 25), "*");
+			
+			GUI.Label(new Rect(410, 35 + 10 + 25 + 5 + 25 + 5 + 25, 100 + 25, 25), "ATK");
+			for(int i = 0;i < atkStar;i++)
+				GUI.Box(new Rect(485 + (i * 25), 35 + 10 + 25 + 5 + 25 + 5 + 25, 25, 25), "*");
+			
+			GUI.Label(new Rect(410, 35 + 10 + 25 + 5 + 25 + 5 + 25 + 5 + 25, 100, 25), "DEF");
+			for(int i = 0;i < defStar;i++)
+				GUI.Box(new Rect(485 + (i * 25), 35 + 10 + 25 + 5 + 25 + 5 + 25 + 5 + 25, 25, 25), "*");
+			
+			GUI.Label(new Rect(410, 35 + 10 + 25 + 5 + 25 + 5 + 25 + 5 + 25 + 5 + 25, 100, 25), "INT");
+			for(int i = 0;i < intStar;i++)
+				GUI.Box(new Rect(485 + (i * 25), 35 + 10 + 25 + 5 + 25 + 5 + 25 + 5 + 25 + 5 + 25, 25, 25), "*");
+
+			GUI.Box(new Rect(425, 35 + 10 + 25 + 5 + 25 + 5 + 25 + 5 + 25 + 5 + 25 + 5 + 25, 75, 75), "Skill Pic");
+			GUI.Box(new Rect(425 + 100, 35 + 10 + 25 + 5 + 25 + 5 + 25 + 5 + 25 + 5 + 25 + 5 + 25, 200, 75), "Skill Detail");
+
+			GUI.BeginGroup(new Rect(410, 35 + 10 + 25 + 5 + 25 + 5 + 25 + 5 + 25 + 5 + 25 + 5 + 25 + 5 + 75, 380, 275), "Evolution");
+			{
+				GUI.Box(new Rect(0,0, 380, 275), "");
+				if (!monsters[id].isSeen)
+				{
+					GUI.color = new Color(0, 0, 0, 1);
+				}
+				else
+				{
+					GUI.color = Color.white;
+				}
+				monsters[id].Draw(new Rect(10, 225 / 2 - 128 / 2, 128, 128));
+				if (monsters[id].evoTo.Length > 0)
+				{
+					if (!monsters[monsters[id].evoTo[0]].isSeen)
+					{
+						GUI.color = new Color(0, 0, 0, 1);
+					}
+					else
+					{
+						GUI.color = Color.white;
+					}
+					monsters[monsters[id].evoTo[0]].Draw(new Rect(178 + 25, 225 / 2 - 128, 128, 128));
+					
+					if (!monsters[monsters[id].evoTo[1]].isSeen)
+					{
+						GUI.color = new Color(0, 0, 0, 1);
+					}
+					else
+					{
+						GUI.color = Color.white;
+					}
+			         monsters[monsters[id].evoTo[1]].Draw(new Rect(178 + 25, 225 / 2, 128, 128));
+				}
+
+			}
+			GUI.EndGroup();
+
+			if (GUI.Button(new Rect(rect.width - 50, 0, 50, 50), "X"))
+			{
+				currentPopupStep = POPUP_STEP.None;
+			}
+		}
+		GUI.EndGroup ();
 	}
 
 	private int currentSelectMonsterInfo = 0;
