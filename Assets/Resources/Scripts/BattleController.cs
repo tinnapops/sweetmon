@@ -281,8 +281,7 @@ public class BattleController : MonoBehaviour
 				AimAttack(step,skill.target,skill.multiply,userMon,targetList);
 			}
 		}
-		else
-			NormalAttack(step,0,userMon,targetList);
+		else NormalAttack(step,0,userMon,targetList);
 
 		CheckDead();
 

@@ -44,8 +44,7 @@ namespace Sinoze.Engine.Collections
 			
 			if(items == null)
 				items = new T[newLength];
-			else
-				Array.Resize(ref items, newLength);
+			else Array.Resize(ref items, newLength);
 			
 			for(int i=oldLength; i<newLength; i++)
 			{
