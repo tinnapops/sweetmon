@@ -16,6 +16,7 @@ public struct MonsterData
 	public float def;
 	public float wis;
 	public float hp;
+	public bool isSeen;
 
 	public SkillData skill;
 
