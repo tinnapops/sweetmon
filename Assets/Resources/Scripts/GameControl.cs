@@ -467,7 +467,7 @@ public class GameControl : MonoBehaviour
 
 				
 				GUI.Box(new Rect(350, 130, 75, 75), "Skill Pic");
-				GUI.Box(new Rect(350, 130 + 80, 75, 25),skills[monIndex].name);
+				GUI.Box(new Rect(350,130 + 80,75,25),monsters[monIndex].skill.name);
 				
 				int hpStar,atkStar,defStar,intStar;
 				monsters[monIndex].GetStar(out hpStar,out atkStar,out defStar,out intStar);
