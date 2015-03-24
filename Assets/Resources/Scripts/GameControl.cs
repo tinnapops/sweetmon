@@ -6,9 +6,10 @@ using System.Collections.Generic;
 public class GameControl : MonoBehaviour
 {
 	public BattleController battleOBJ;
+	AudioSource audioSource;
 	void Start() 
 	{
-		var audioSource	= gameObject.GetComponent<AudioSource>();
+		audioSource	= gameObject.GetComponent<AudioSource>();
 		audioSource.Stop();
 		audioSource.clip = bgm[0];
 		audioSource.Play();
@@ -55,9 +56,16 @@ public class GameControl : MonoBehaviour
 	public Vector2 scrollPosition;
 
 	public int currentSelectMonsterInfo = 0;
+	public void AutoResize()
+	{
+		int screenWidth	= 1024;
+		int screenHeight	= 768;
+		Vector2 resizeRatio = new Vector2((float)Screen.width / screenWidth,(float)Screen.height / screenHeight);
+		GUI.matrix = Matrix4x4.TRS(Vector3.zero,Quaternion.identity,new Vector3(resizeRatio.x,resizeRatio.y,1.0f));
+	}
+
 	void OnGUI()
 	{
-		UI.AutoResize (1024, 768);
 		/*
 		if(start >= 0)
 		{
@@ -81,8 +89,8 @@ public class GameControl : MonoBehaviour
 
 		if(battleOBJ.gameObject.activeSelf)
 			return;
-		
-		var audioSource	= gameObject.GetComponent<AudioSource>();
+
+		AutoResize();
 
 		//Status Bar
 		GUI.BeginGroup (statusPosition, "");

@@ -17,7 +17,7 @@ namespace GameControlUI
 
 		void OnGUI()
 		{
-			UI.AutoResize(1024,768);
+			control.AutoResize();
 
 			for(int i = 0;i < control.quest.Length;i++)
 			{

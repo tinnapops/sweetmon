@@ -27,26 +27,22 @@ public class BattleController : MonoBehaviour
 
 		leftTeam.Clear();
 		foreach(int i in Enumerable.Range(0,leftLocation.Length))
-			leftTeam.Add(AddFighter(leftLocation[i],gCtrl.teamSelect[i],false));
+			leftTeam.Add(AddFighter(leftLocation[i],ref gCtrl.monsters[gCtrl.teamSelect[i]],Team.Left));
 
 		foreach(int i in Enumerable.Range(0,rightLocation.Length))
-			rightTeam.Add(AddFighter(rightLocation[i],gCtrl.CurrentQuest.enemy[i],true));
-
-		foreach(var monster in leftTeam.Concat(rightTeam))
-			Debug.Log(monster);
-
+			rightTeam.Add(AddFighter(rightLocation[i],ref gCtrl.monsters[gCtrl.CurrentQuest.enemy[i]],Team.Right));
+		
 		isExecute = false;
 		actionQueue.Clear();
 	}
 
 	public Texture2D[] colorBox = new Texture2D[6];
-	Monster AddFighter(Transform location,int index,bool inverse)
+	Monster AddFighter(Transform location,ref MonsterData monData,Team team)
 	{
 		GameObject monObj;
-		if(gCtrl.monsters[index].prefab != null)
-			monObj	= GameObject.Instantiate(gCtrl.monsters[index].prefab);
-		else
-			monObj	= GameObject.Instantiate(defaultMon);
+		if(monData.prefab != null)
+			monObj	= GameObject.Instantiate(monData.prefab);
+		else monObj	= GameObject.Instantiate(defaultMon);
 
 		monObj.transform.parent	= gameObject.transform;
 		monObj.transform.position	= location.position;
@@ -55,18 +51,19 @@ public class BattleController : MonoBehaviour
 		if(newFighter == null)
 			newFighter = monObj.AddComponent<Monster>();
 
-		newFighter.Team	= inverse ? Team.Right : Team.Left;
-
-		newFighter.hp = gCtrl.monsters[index].hp;
-		newFighter.atk = gCtrl.monsters[index].atk;
-		newFighter.def = gCtrl.monsters[index].def;
-		newFighter.wis = gCtrl.monsters[index].wis;
+		newFighter.hp = monData.hp;
+		newFighter.atk = monData.atk;
+		newFighter.def = monData.def;
+		newFighter.wis = monData.wis;
 		newFighter.currentHp = newFighter.hp;
 		newFighter.currentLimit = 0;
 		newFighter.limitBreak = 5;
 
 
-		newFighter.skill = gCtrl.monsters[index].skill;
+		newFighter.skill = monData.skill;
+		newFighter.Team	= team;
+
+		Debug.Log(newFighter);
 		return newFighter;
 	}
 
@@ -126,7 +123,7 @@ public class BattleController : MonoBehaviour
 
 	void OnGUI()
 	{
-		UI.AutoResize(1024,768);
+		gCtrl.AutoResize();
 
 		//HP Left Zone
 

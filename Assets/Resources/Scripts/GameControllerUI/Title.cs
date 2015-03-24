@@ -17,7 +17,7 @@ namespace GameControlUI
 
 		void OnGUI()
 		{
-			UI.AutoResize(1024,768);
+			control.AutoResize();
 
 			GUI.DrawTexture(new Rect(0,0,1024,768),control.startScreen);
 			GUI.color = new Color(0,0,0,0);

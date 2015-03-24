@@ -22,7 +22,7 @@ namespace GameControlUI
 		int currentDexID;
 		void OnGUI()
 		{
-			UI.AutoResize(1024,768);
+			control.AutoResize();
 
 			var monsters	= control.monsters;
 			

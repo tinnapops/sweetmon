@@ -17,7 +17,7 @@ namespace GameControlUI
 
 		void OnGUI()
 		{
-			UI.AutoResize(1024,768);
+			control.AutoResize();
 
 			var battlePosition	= control.battlePosition;
 			var battlePosSize	= control.battlePosSize;

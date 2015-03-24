@@ -17,7 +17,7 @@ namespace GameControlUI
 
 		void OnGUI()
 		{
-			UI.AutoResize(1024,768);
+			control.AutoResize();
 
 			var FeedingPosition	= control.FeedingPosition;
 			var monsterInfoRect	= control.monsterInfoRect;

@@ -17,7 +17,7 @@ namespace GameControlUI
 
 		void OnGUI()
 		{
-			UI.AutoResize(1024,768);
+			control.AutoResize();
 
 			if(GUI.Button(new Rect(1024 - 200,768 - 200,200,200),"Adventure"))
 			{
