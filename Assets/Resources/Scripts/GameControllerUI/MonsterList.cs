@@ -7,6 +7,7 @@ namespace GameControlUI
 {
 	public class MonsterList : MonoBehaviour
 	{
+
 		AudioSource audioSource;
 		GameControl control;
 		void Start()
@@ -15,6 +16,8 @@ namespace GameControlUI
 			control	= gameObject.GetComponent<GameControl>();
 		}
 
+		public List<int> foodSelect = new List<int>();
+		bool feedingMode = false;
 		void OnGUI()
 		{
 			control.AutoResize();
@@ -69,9 +72,9 @@ namespace GameControlUI
 				monsters[monIndex].Draw(new Rect(5,5,256,256));
 
 				GUI.Box(new Rect(350,60,50,25),"LV");
-				GUI.Box(new Rect(350 + 50,60,250,25),"EXP 0/100");
+				GUI.Box(new Rect(350 + 50,60,250,25),"EXP" + monsters[monIndex].exp +  "/" + (100 * (monsters[monIndex].level + 1)));
 				GUI.Box(new Rect(350,60 + 30,50,25),"FLV");
-				GUI.Box(new Rect(350 + 50,60 + 30,250,25),"FULLNESS 100/100");
+				GUI.Box(new Rect(350 + 50,60 + 30,250,25),"FULLNESS " + monsters[monIndex].full +  "/" + (100 * (monsters[monIndex].level + 1)));
 
 				GUI.Box(new Rect(350 + 200 + 105,180,300,50),"Evolution");
 
@@ -106,16 +109,26 @@ namespace GameControlUI
 					var monsterButton = new Rect(0 + ((i%7) * iconSize.x),0 + ((i/7) * iconSize.y),iconSize.x,iconSize.y);
 
 					var monIndex	= playerMonster[i];
-					if(teamSelect.Contains(monIndex))
+					if(foodSelect.Contains(i))
+						GUI.Box(monsterButton,"Food");
+
+					if(i == control.currentSelectMonsterInfo)
 						GUI.Box(monsterButton,"SELECTED");
 					monsters[playerMonster[i]].Draw(monsterButton);
 
 					GUI.color = new Color(0,0,0,0);
 
-					if(GUI.Button(monsterButton,""))
-					{
-						control.currentSelectMonsterInfo = i;
+					if(feedingMode)
+ 					{
+						if(GUI.Button(monsterButton,"") && control.currentSelectMonsterInfo != i)
+						{
+							if(!foodSelect.Remove(i))
+								foodSelect.Add(i);
+						}
 					}
+					else if(GUI.Button(monsterButton,""))
+						control.currentSelectMonsterInfo = i;
+
 					GUI.color = Color.white;
 				}
 			}

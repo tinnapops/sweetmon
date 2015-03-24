@@ -35,7 +35,7 @@ public class GameControl : MonoBehaviour
 		get { return quest[currentQuestSelect]; }
 	}
 
-	public List<int> teamSelect = new List<int> ();
+	public List<int> teamSelect = new List<int>();
 
 	public Rect statusPosition;
 

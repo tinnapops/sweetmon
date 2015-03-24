@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
+public enum Taste { Sweet, Sour, Salty }
+
 [System.Serializable]
 public struct MonsterData
 {
@@ -17,6 +19,12 @@ public struct MonsterData
 	public float wis;
 	public float hp;
 	public bool isSeen;
+	public Taste taste;
+	public Taste like;
+	public int exp;
+	public int full;
+	public int happy;
+	public int level;
 
 	public SkillData skill;
 
