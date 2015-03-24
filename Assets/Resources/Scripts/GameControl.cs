@@ -44,6 +44,7 @@ public class GameControl : MonoBehaviour
 	}
 
 	public List<int> teamSelect = new List<int> ();
+	public List<int> foodSelect = new List<int> ();
 
 	public Rect statusPosition;
 
@@ -59,6 +60,7 @@ public class GameControl : MonoBehaviour
 
 	public enum UI_STEP{Title, Lobby, StageSelect, TeamSetup, Battle, Shop, DessertDex, Topping, Evolution, MonsterList};
 	public enum POPUP_STEP{None, MonsterInfo, FriendList};
+	public enum TASTE{Sweet, Sour, SaltyF};
 
 	public UI_STEP currentStep = UI_STEP.Title;
 	public POPUP_STEP currentPopupStep = POPUP_STEP.None;
@@ -412,9 +414,9 @@ public class GameControl : MonoBehaviour
 					GUI.Box(new Rect(100 + (i * 25), 210 , 25, 25), "*");
 					
 				GUI.Box(new Rect(350 , 60, 50, 25), "LV");
-				GUI.Box(new Rect(350 + 50, 60, 250, 25), "EXP 0/100");
+				GUI.Box(new Rect(350 + 50, 60, 250, 25), "EXP" + monsters[monIndex].exp +  "/" + (100 * (monsters[monIndex].level + 1)));
 				GUI.Box(new Rect(350 , 60 + 30, 50, 25), "FLV");
-				GUI.Box(new Rect(350 + 50, 60 + 30, 250, 25), "FULLNESS 0/100");
+				GUI.Box(new Rect(350 + 50, 60 + 30, 250, 25), "FULLNESS " + monsters[monIndex].full +  "/" + (100 * (monsters[monIndex].level + 1)));
 				GUI.Box(new Rect(350, 130, 100, 100), "EVO BUTTON\nMax LV\nMax FULL");
 				GUI.Box(new Rect(350 + 105, 130, 100, 100), "SELL");
 				GUI.Box(new Rect(350 + 105 + 105, 130, 100, 100), "TOPPING\n(Coming Soon)");
@@ -467,7 +469,7 @@ public class GameControl : MonoBehaviour
 
 				
 				GUI.Box(new Rect(350, 130, 75, 75), "Skill Pic");
-				GUI.Box(new Rect(350, 130 + 80, 75, 25),skills[monIndex].name);
+				GUI.Box(new Rect(350, 130 + 80, 75, 25),monsters[monIndex].skill.name);
 				
 				int hpStar,atkStar,defStar,intStar;
 				monsters[monIndex].GetStar(out hpStar,out atkStar,out defStar,out intStar);
@@ -492,9 +494,9 @@ public class GameControl : MonoBehaviour
 				monsters[monIndex].Draw(new Rect(5, 5 , 256, 256));
 
 				GUI.Box(new Rect(350 , 60, 50, 25), "LV");
-				GUI.Box(new Rect(350 + 50, 60, 250, 25), "EXP 0/100");
+				GUI.Box(new Rect(350 + 50, 60, 250, 25), "EXP " + monsters[monIndex].exp +  "/" + (100 * (monsters[monIndex].level + 1)));
 				GUI.Box(new Rect(350 , 60 + 30, 50, 25), "FLV");
-				GUI.Box(new Rect(350 + 50, 60 + 30, 250, 25), "FULLNESS 100/100");
+				GUI.Box(new Rect(350 + 50, 60 + 30, 250, 25), "FULLNESS " +  monsters[monIndex].full + "/" + (100 * (monsters[monIndex].level + 1)));
 
 				GUI.Box(new Rect(350 + 200 + 105, 180, 300, 50), "Evolution");
 
@@ -529,16 +531,39 @@ public class GameControl : MonoBehaviour
 					var monsterButton = new Rect(0 + ((i%7) * iconSize.x), 0 + ((i/7) * iconSize.y), iconSize.x ,iconSize.y);
 					
 					var monIndex	= playerMonster[i];
-					if(teamSelect.Contains(monIndex))
+					if(foodSelect.Contains(i))
+						GUI.Box(monsterButton,"Food");
+
+					if(i == currentSelectMonsterInfo)
 						GUI.Box(monsterButton,"SELECTED");
 					monsters[playerMonster[i]].Draw(monsterButton);
 					
 					GUI.color = new Color(0,0,0,0);
-					
-					if (GUI.Button(monsterButton, ""))
+
+
+					if (feedingMode)
 					{
-						currentSelectMonsterInfo = i;
+						if (GUI.Button(monsterButton, "") && currentSelectMonsterInfo != i)
+						{
+							if (foodSelect.Contains(i))
+							{
+								foodSelect.Remove(i);
+							}
+							else
+							{
+								foodSelect.Add(i);
+							}
+
+						}
 					}
+					else
+					{
+						if (GUI.Button(monsterButton, ""))
+						{
+							currentSelectMonsterInfo = i;
+						}
+					}
+
 					GUI.color = Color.white;
 				}
 			}
@@ -552,7 +577,7 @@ public class GameControl : MonoBehaviour
 		}
 	}
 
-	bool feedingMode = false;
+	public bool feedingMode = false;
 
 	void MonsterInfo(int id, Rect rect)
 	{

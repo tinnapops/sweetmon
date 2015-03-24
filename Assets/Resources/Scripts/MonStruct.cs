@@ -17,6 +17,12 @@ public struct MonsterData
 	public float wis;
 	public float hp;
 	public bool isSeen;
+	public GameControl.TASTE taste;
+	public GameControl.TASTE like;
+	public int exp;
+	public int full;
+	public int happy;
+	public int level;
 
 	public SkillData skill;
 
