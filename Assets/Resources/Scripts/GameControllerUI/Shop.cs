@@ -30,7 +30,7 @@ namespace GameControlUI
 				audioSource.PlayOneShot(control.buttonSFX[0]);
 			}
 
-			if(GUI.Button(new Rect(1024 - 200, 50,25,25),"X"))
+			if(GUI.Button(new Rect(1024 - 200, 150,25,25),"X"))
 			{
 				GameObject.Destroy(this);
 				gameObject.AddComponent<Lobby>();

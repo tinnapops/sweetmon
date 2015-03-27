@@ -34,7 +34,9 @@ namespace GameControlUI
 			}
 			if(GUI.Button(new Rect(100,768 - 100,100,100),"Friend List"))
 			{
-
+				GameObject.Destroy(this);
+				gameObject.AddComponent<FriendList>();
+				audioSource.PlayOneShot(control.buttonSFX[0]);
 			}
 			if(GUI.Button(new Rect(200,768 - 100,100,100),"Monster"))
 			{

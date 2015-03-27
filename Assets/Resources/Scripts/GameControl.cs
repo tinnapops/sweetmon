@@ -198,7 +198,7 @@ public class GameControl : MonoBehaviour
 
 	public void ReadPlayerData()
 	{
-		string playerCode = PlayerPrefs.GetString ("PLAYERCODE", "0^0^0^0^0^0/6^0^0^0^0^0/6^0^0^0^0^1/12^0^0^0^0^0/15^0^0^0^0^0/16^0^0^0^0^0/17^0^0^0^0^0");
+		string playerCode = PlayerPrefs.GetString ("PLAYERCODE", "0^0^0^0^0^0/6^0^0^0^0^0/6^0^0^0^0^1/9^0^0^0^0^0/9^0^0^0^0^1/10^0^0^0^0^0/12^0^0^0^0^0/15^0^0^0^0^0/16^0^0^0^0^0/17^0^0^0^0^0");
 		string dexCode = PlayerPrefs.GetString ("DEXCODE", "1^0^0^0^0^0^1^0^0^0^0^0^1^0^0^0^0^0");
 		string[] spiltPlayerCode = 	playerCode.Split('/');
 		playerMonster = new MonsterData[spiltPlayerCode.Length];
@@ -277,7 +277,7 @@ public class GameControl : MonoBehaviour
 		playerMonster [playerMonster.Length - 1] = tempMon;
 	}
 
-	void Breed(int userMonsterID,int friendMonsterID, bool isFriendShiny)
+	public void Breed(int userMonsterID,int friendMonsterID, bool isFriendShiny)
 	{
 		MonsterData tempMon = new MonsterData();
 		int starterMon = 0;

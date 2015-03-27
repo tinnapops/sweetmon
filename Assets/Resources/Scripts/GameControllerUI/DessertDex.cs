@@ -34,6 +34,7 @@ namespace GameControlUI
 					{
 						GameObject.Destroy(this);
 						gameObject.AddComponent<Lobby>();
+						audioSource.PlayOneShot(control.buttonSFX[1]);
 						return;
 					}
 					GUI.Box(new Rect(0,0,1024 - 50,768 - 100),"Sweet Recipe");

@@ -37,6 +37,7 @@ namespace GameControlUI
 				{
 					GameObject.Destroy(this);
 					gameObject.AddComponent<Lobby>();
+					audioSource.PlayOneShot(control.buttonSFX[1]);
 				}
 
 				GUI.Box(new Rect(0,0,FeedingPosition.width,monsterInfoRect.height),"INFO");
