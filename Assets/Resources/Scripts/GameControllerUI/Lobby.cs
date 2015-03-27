@@ -28,7 +28,9 @@ namespace GameControlUI
 
 			if(GUI.Button(new Rect(0,768 - 100,100,100),"Shop"))
 			{
-
+				GameObject.Destroy(this);
+				gameObject.AddComponent<Shop>();
+				audioSource.PlayOneShot(control.buttonSFX[0]);
 			}
 			if(GUI.Button(new Rect(100,768 - 100,100,100),"Friend List"))
 			{

@@ -65,10 +65,10 @@ namespace GameControlUI
 				{
 					var monsterButton = new Rect(0 + ((i%7) * iconSize.x),0 + ((i/7) * iconSize.y),iconSize.x,iconSize.y);
 
-					var monIndex	= playerMonster[i];
+					var monIndex	= playerMonster[i].id;
 					if(teamSelect.Contains(monIndex))
 						GUI.Box(monsterButton,"SELECTED");
-					monsters[playerMonster[i]].Draw(monsterButton);
+					monsters[monIndex].Draw(monsterButton);
 
 					GUI.color = new Color(0,0,0,0);
 
@@ -87,7 +87,7 @@ namespace GameControlUI
 			{
 				GUI.Box(new Rect(0,0,monsterInfoRect.width,monsterInfoRect.height),"INFO");
 
-				var monIndex	= playerMonster[control.currentSelectMonsterInfo];
+				var monIndex	= playerMonster[control.currentSelectMonsterInfo].id;
 				GUI.Box(new Rect(0,25,monsterInfoRect.width,25),monsters[monIndex].name);
 
 				GUI.Box(new Rect(25,55,75,75),"Skill Pic");

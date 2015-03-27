@@ -41,7 +41,7 @@ namespace GameControlUI
 
 				GUI.Box(new Rect(0,0,FeedingPosition.width,monsterInfoRect.height),"INFO");
 
-				var monIndex	= playerMonster[control.currentSelectMonsterInfo];
+				var monIndex	= playerMonster[control.currentSelectMonsterInfo].id;
 				GUI.Box(new Rect(25,25,256,25),monsters[monIndex].name);
 				GUI.Box(new Rect(5 + 256,160,75,75),"TOPPING");
 
@@ -69,18 +69,50 @@ namespace GameControlUI
 					GUI.Box(new Rect(100 + (i * 25) + 430,210,25,25),"*");
 
 
-				monsters[monIndex].Draw(new Rect(5,5,256,256));
+				playerMonster[control.currentSelectMonsterInfo].Draw(new Rect(5,5,256,256));
+				if (playerMonster.Length > 3)
+				{
+					if (GUI.Button(new Rect(5 + 256, 75, 75, 75), "Feed Mode"))
+					{
+						feedingMode = !feedingMode;
+						foodSelect.Clear();
+						
+					}
+				}
+				else
+				{
+					GUI.Box(new Rect(5 + 256, 75, 75, 75), "Need 3+\nMON\nto\nFeed");
+				}
 
 				GUI.Box(new Rect(350,60,50,25),"LV");
-				GUI.Box(new Rect(350 + 50,60,250,25),"EXP" + monsters[monIndex].exp +  "/" + (100 * (monsters[monIndex].level + 1)));
+				GUI.Box(new Rect(350 + 50,60,250,25),"EXP" + playerMonster[control.currentSelectMonsterInfo].exp +  "/" + (100 * (playerMonster[control.currentSelectMonsterInfo].level + 1)));
 				GUI.Box(new Rect(350,60 + 30,50,25),"FLV");
-				GUI.Box(new Rect(350 + 50,60 + 30,250,25),"FULLNESS " + monsters[monIndex].full +  "/" + (100 * (monsters[monIndex].level + 1)));
+				GUI.Box(new Rect(350 + 50,60 + 30,250,25),"FULLNESS " + playerMonster[control.currentSelectMonsterInfo].full +  "/" + (100 * (playerMonster[control.currentSelectMonsterInfo].level + 1)));
 
-				GUI.Box(new Rect(350 + 200 + 105,180,300,50),"Evolution");
+				if (playerMonster[control.currentSelectMonsterInfo].evoTo.Length > 0 && playerMonster[control.currentSelectMonsterInfo].exp >= 100 && playerMonster[control.currentSelectMonsterInfo].full >= 100)
+				{
+					if (GUI.Button(new Rect(350 + 200 + 105,180,300,50),"Evolution"))
+					{
+						control.Evolution(control.currentSelectMonsterInfo, -1);
+					}
+					
+					int evoCal = (50 + playerMonster[control.currentSelectMonsterInfo].happy * 5);
+					if (GUI.Button(new Rect(350 + 200 + 105,180 - 55,145,50), evoCal + " %\nDNA LOCK"))
+					{
+						control.Evolution(control.currentSelectMonsterInfo, 0);
+					}
+					if (GUI.Button(new Rect(350 + 200 + 105 + 155,180 - 55,145,50), (100 - evoCal) + " %\nDNA LOCK"))
+					{
+						control.Evolution(control.currentSelectMonsterInfo, 1);
+					}
+					
+					
 
-				GUI.Box(new Rect(350 + 200 + 105,180 - 55,145,50),"50 %\nDNA LOCK");
-				GUI.Box(new Rect(350 + 200 + 105 + 155,180 - 55,145,50),"50 %\nDNA LOCK");
-
+				}
+				else
+				{
+					GUI.Box(new Rect(350 + 200 + 105,180 - 55,300, 100),"You Need to Max \nLevel and Fullness to Evolution");
+				}
 
 				if(monsters[monIndex].evoTo.Length > 0)
 				{
@@ -96,8 +128,6 @@ namespace GameControlUI
 					monsters[monsters[monIndex].evoTo[1]].Draw(new Rect(350 + 200 + 125 + 155,180 - 55 - 105,100,100));
 					GUI.color = Color.white;
 				}
-
-
 			}
 			GUI.EndGroup();
 
@@ -108,19 +138,19 @@ namespace GameControlUI
 				{
 					var monsterButton = new Rect(0 + ((i%7) * iconSize.x),0 + ((i/7) * iconSize.y),iconSize.x,iconSize.y);
 
-					var monIndex	= playerMonster[i];
+					var monIndex	= playerMonster[i].id;
 					if(foodSelect.Contains(i))
 						GUI.Box(monsterButton,"Food");
 
 					if(i == control.currentSelectMonsterInfo)
 						GUI.Box(monsterButton,"SELECTED");
-					monsters[playerMonster[i]].Draw(monsterButton);
+					playerMonster[i].Draw(monsterButton);
 
 					GUI.color = new Color(0,0,0,0);
 
 					if(feedingMode)
  					{
-						if(GUI.Button(monsterButton,"") && control.currentSelectMonsterInfo != i)
+						if(GUI.Button(monsterButton,"") && control.currentSelectMonsterInfo != i && playerMonster.Length - foodSelect.Count > 3)
 						{
 							if(!foodSelect.Remove(i))
 								foodSelect.Add(i);
@@ -133,6 +163,42 @@ namespace GameControlUI
 				}
 			}
 			GUI.EndGroup();
+
+			if (feedingMode)
+			{
+				if (GUI.Button(new Rect(1024 / 2 - 250, 768 - 100, 200, 100), "OK"))
+				{
+					for (int i = 0; i < foodSelect.Count;i++)
+					{
+						playerMonster[control.currentSelectMonsterInfo].full += (25 * (playerMonster[foodSelect[i]].level + 1));
+						if (monsters[playerMonster[control.currentSelectMonsterInfo].id].like == playerMonster[foodSelect[i]].taste)
+						{
+							playerMonster[control.currentSelectMonsterInfo].happy++;						
+						}
+						else
+						{
+							playerMonster[control.currentSelectMonsterInfo].happy--;
+						}
+						playerMonster[control.currentSelectMonsterInfo].happy = Mathf.Clamp(playerMonster[control.currentSelectMonsterInfo].happy, -5, 5);
+						playerMonster[control.currentSelectMonsterInfo].full = Mathf.Clamp(playerMonster[control.currentSelectMonsterInfo].full, 0, 100);
+
+						playerMonster[control.currentSelectMonsterInfo].exp += 50;
+					}
+					control.playerMonster = playerMonster.Where((mon) => !foodSelect.Select((index) => playerMonster[index].id).Contains(mon.id)).ToArray();
+					foodSelect.Clear();
+					control.currentSelectMonsterInfo = 0;// ** Hack 02
+					feedingMode = false;
+
+					control.writePlayerData();
+
+				}
+				if (GUI.Button(new Rect(1024 / 2 + 150, 768 - 100, 200, 100), "Cancle"))
+				{
+					feedingMode = false;
+					foodSelect.Clear();
+				}
+			}
+
 		}
 	}
 }

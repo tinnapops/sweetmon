@@ -34,6 +34,7 @@ public class BattleController : MonoBehaviour
 		
 		isExecute = false;
 		actionQueue.Clear();
+		animQueue.Clear ();
 	}
 
 	public Texture2D[] colorBox = new Texture2D[6];
@@ -78,8 +79,7 @@ public class BattleController : MonoBehaviour
 
 		if(result.HasValue)
 			return;
-
-		Debug.Log(isExecute);
+		
 		if(actionQueue.Count >= maxActionPoint && !isExecute)
 		{
 			isExecute = true;
@@ -278,7 +278,15 @@ public class BattleController : MonoBehaviour
 				AimAttack(step,skill.target,skill.multiply,userMon,targetList);
 			}
 		}
-		else NormalAttack(step,0,userMon,targetList);
+		else 
+		{
+			NormalAttack(step,0,userMon,targetList);
+			userMon.currentLimit += step - 1;
+			if (userMon.currentLimit > 5)
+			{
+				userMon.currentLimit = 5;
+			}
+		}
 
 		CheckDead();
 
@@ -384,7 +392,7 @@ public class BattleController : MonoBehaviour
 		}
 		else
 		{
-			for(int i = 0;i < targetList.Count;i++)
+			while(targetID < targetList.Count)
 			{
 				if(targetList[targetID].currentHp <= 0)
 				{
@@ -393,14 +401,14 @@ public class BattleController : MonoBehaviour
 				//Sinoze.Engine.Assert.True(targetID < rightTeam.Count);
 			}
 
-			if(targetID <= targetList.Count)
+			if(targetID < targetList.Count)
 			{
 				damage = ((userMon.atk - targetList[targetID].def) + (stack * multiply));// Power Attack * 2
 				damage = Mathf.Clamp(damage,1,99);
 				targetList[targetID].currentHp -= damage;
 				HitEffect(targetList[targetID].gameObject);
 			}
-			Debug.Log("Power Atk : ATTACKER ID : " + userMon + " DEAL : " + userMon.atk + " * " + stack + " " + " > ENEMY ID : " + targetID + " : Def " +  targetList[targetID].def + " True Damage > " + damage);
+			//Debug.Log("Power Atk : ATTACKER ID : " + userMon + " DEAL : " + userMon.atk + " * " + stack + " " + " > ENEMY ID : " + targetID + " : Def " +  targetList[targetID].def + " True Damage > " + damage);
 		}
 	}
 

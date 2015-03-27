@@ -2,18 +2,19 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public enum Taste { Sweet, Sour, Salty }
+public enum Taste {Sweet, Freshy, Smooth}
 
 [System.Serializable]
 public struct MonsterData
 {
+	public int id;
 	public GameObject prefab;
 	public string name;
 	public Object image;
+	public Object shinyImage;
 	public int role;// 0 Tank, 1 DD, 2 Heal
 	public int currentEvo;
 	public int[] evoTo;
-	public int trainLV;
 	public float atk;
 	public float def;
 	public float wis;
@@ -25,6 +26,8 @@ public struct MonsterData
 	public int full;
 	public int happy;
 	public int level;
+	public bool isShiny;
+	public int toppingID;
 
 	public SkillData skill;
 
@@ -55,7 +58,7 @@ public struct MonsterData
 
 	public void GetStar(out int hitpoint,out int attack,out int defence,out int wisdom)
 	{
-		hitpoint	= Mathf.FloorToInt((hp/(13.4f/6)) + 1);
+		hitpoint = Mathf.FloorToInt((hp/(13.4f/6)) + 1);
 		attack	= Mathf.FloorToInt((atk/(28/6)) + 1);
 		defence	= Mathf.FloorToInt((def/(28/6)) + 1);
 		wisdom	= Mathf.FloorToInt((wis/(28/6)) + 1);
