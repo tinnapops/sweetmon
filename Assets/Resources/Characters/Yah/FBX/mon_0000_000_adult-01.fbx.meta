@@ -1,0 +1,192 @@
+fileFormatVersion: 2
+guid: 980389a535c84964c97e1b4b03f2450a
+timeCreated: 1427443075
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: bm_master
+    100002: bn_body
+    100004: bn_chest
+    100006: bn_face
+    100008: bn_head01
+    100010: bn_head02
+    100012: bn_head03
+    100014: bn_head04
+    100016: bn_l_elbow
+    100018: bn_l_foot
+    100020: bn_l_hand
+    100022: bn_l_leg
+    100024: bn_l_shoulder
+    100026: bn_r_elbow
+    100028: bn_r_foot
+    100030: bn_r_hand
+    100032: bn_r_leg
+    100034: bn_r_shoulder
+    100036: bones
+    100038: Global_Scale
+    100040: Global_Tranform
+    100042: mesh_mon
+    100044: model
+    100046: //RootNode
+    400000: bm_master
+    400002: bn_body
+    400004: bn_chest
+    400006: bn_face
+    400008: bn_head01
+    400010: bn_head02
+    400012: bn_head03
+    400014: bn_head04
+    400016: bn_l_elbow
+    400018: bn_l_foot
+    400020: bn_l_hand
+    400022: bn_l_leg
+    400024: bn_l_shoulder
+    400026: bn_r_elbow
+    400028: bn_r_foot
+    400030: bn_r_hand
+    400032: bn_r_leg
+    400034: bn_r_shoulder
+    400036: bones
+    400038: Global_Scale
+    400040: Global_Tranform
+    400042: mesh_mon
+    400044: model
+    400046: //RootNode
+    4300000: mesh_mon
+    7400000: idle
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: mesh_mon
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 0
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: idle
+      takeName: Take 001
+      firstFrame: 4
+      lastFrame: 63
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Global_Tranform
+        weight: 1
+      - path: Global_Tranform/Global_Scale
+        weight: 1
+      - path: Global_Tranform/Global_Scale/bones
+        weight: 1
+      - path: Global_Tranform/Global_Scale/bones/bm_master
+        weight: 1
+      - path: Global_Tranform/Global_Scale/bones/bm_master/bn_body
+        weight: 1
+      - path: Global_Tranform/Global_Scale/bones/bm_master/bn_body/bn_chest
+        weight: 1
+      - path: Global_Tranform/Global_Scale/bones/bm_master/bn_body/bn_chest/bn_head01
+        weight: 1
+      - path: Global_Tranform/Global_Scale/bones/bm_master/bn_body/bn_chest/bn_head01/bn_face
+        weight: 1
+      - path: Global_Tranform/Global_Scale/bones/bm_master/bn_body/bn_chest/bn_head01/bn_head02
+        weight: 1
+      - path: Global_Tranform/Global_Scale/bones/bm_master/bn_body/bn_chest/bn_head01/bn_head02/bn_head03
+        weight: 1
+      - path: Global_Tranform/Global_Scale/bones/bm_master/bn_body/bn_chest/bn_head01/bn_head02/bn_head03/bn_head04
+        weight: 1
+      - path: Global_Tranform/Global_Scale/bones/bm_master/bn_body/bn_chest/bn_l_shoulder
+        weight: 1
+      - path: Global_Tranform/Global_Scale/bones/bm_master/bn_body/bn_chest/bn_l_shoulder/bn_l_elbow
+        weight: 1
+      - path: Global_Tranform/Global_Scale/bones/bm_master/bn_body/bn_chest/bn_l_shoulder/bn_l_elbow/bn_l_hand
+        weight: 1
+      - path: Global_Tranform/Global_Scale/bones/bm_master/bn_body/bn_chest/bn_r_shoulder
+        weight: 1
+      - path: Global_Tranform/Global_Scale/bones/bm_master/bn_body/bn_chest/bn_r_shoulder/bn_r_elbow
+        weight: 1
+      - path: Global_Tranform/Global_Scale/bones/bm_master/bn_body/bn_chest/bn_r_shoulder/bn_r_elbow/bn_r_hand
+        weight: 1
+      - path: Global_Tranform/Global_Scale/bones/bm_master/bn_body/bn_l_leg
+        weight: 1
+      - path: Global_Tranform/Global_Scale/bones/bm_master/bn_body/bn_l_leg/bn_l_foot
+        weight: 1
+      - path: Global_Tranform/Global_Scale/bones/bm_master/bn_body/bn_r_leg
+        weight: 1
+      - path: Global_Tranform/Global_Scale/bones/bm_master/bn_body/bn_r_leg/bn_r_foot
+        weight: 1
+      - path: Global_Tranform/Global_Scale/model
+        weight: 1
+      - path: Global_Tranform/Global_Scale/model/mesh_mon
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

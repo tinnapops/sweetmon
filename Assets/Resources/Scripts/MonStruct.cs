@@ -31,6 +31,8 @@ public struct MonsterData
 
 	public SkillData skill;
 
+	public AudioClip Cry;
+
 	public void Draw(Rect mb)
 	{
 		if(image is Texture2D)

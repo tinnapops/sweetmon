@@ -9,6 +9,7 @@ public class GameControl : MonoBehaviour
 	public static int gem = 1000;
 	public static int key = 100;
 
+	[System.NonSerialized]
 	public BattleController battleOBJ;
 	AudioSource audioSource;
 	void Start() 
@@ -23,6 +24,7 @@ public class GameControl : MonoBehaviour
 		battleOBJ	= gameObject.transform.GetChild(0).GetComponent<BattleController>();
 
 		gameObject.AddComponent<GameControlUI.Title>();
+
 	}
 
 	public AudioClip[] bgm;
@@ -198,7 +200,7 @@ public class GameControl : MonoBehaviour
 
 	public void ReadPlayerData()
 	{
-		string playerCode = PlayerPrefs.GetString ("PLAYERCODE", "0^0^0^0^0^0/6^0^0^0^0^0/6^0^0^0^0^1/9^0^0^0^0^0/9^0^0^0^0^1/10^0^0^0^0^0/12^0^0^0^0^0/15^0^0^0^0^0/16^0^0^0^0^0/17^0^0^0^0^0");
+		string playerCode = PlayerPrefs.GetString ("PLAYERCODE", "0^0^0^0^0^0/6^0^0^0^0^0/8^0^0^0^0^0/9^0^0^0^0^1/10^0^0^0^0^0/12^0^0^0^0^0/15^0^0^0^0^0/16^0^0^0^0^0/17^0^0^0^0^0");
 		string dexCode = PlayerPrefs.GetString ("DEXCODE", "1^0^0^0^0^0^1^0^0^0^0^0^1^0^0^0^0^0");
 		string[] spiltPlayerCode = 	playerCode.Split('/');
 		playerMonster = new MonsterData[spiltPlayerCode.Length];

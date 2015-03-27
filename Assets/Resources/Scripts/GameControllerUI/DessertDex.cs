@@ -168,6 +168,9 @@ namespace GameControlUI
 										currentPopupStep = POPUP_STEP.MonsterInfo;
 										currentDexID = id + 5;
 									}
+
+									if(currentPopupStep == POPUP_STEP.MonsterInfo)
+										audioSource.PlayOneShot(monsters[currentDexID].Cry);
 								}
 								GUI.color = Color.white;
 							}
